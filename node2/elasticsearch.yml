@@ -54,7 +54,7 @@ node.roles: [ data ]
 # By default Elasticsearch is only accessible on localhost. Set a different
 # address here to expose this node on the network:
 #
-network.host: 0.0.0.0
+network.host: "0.0.0.0"
 #
 # By default Elasticsearch listens for HTTP traffic on the first free port it
 # finds starting at 9200. Set a specific HTTP port here:
@@ -68,7 +68,7 @@ network.host: 0.0.0.0
 # Pass an initial list of hosts to perform discovery when this node is started:
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
-discovery.seed_hosts: ["10.0.2.15", "127.0.0.1", "0.0.0.0"]
+discovery.seed_hosts: ["10.0.2.15"]
 #
 # Bootstrap the cluster using an initial set of master-eligible nodes:
 #
@@ -82,3 +82,6 @@ cluster.initial_master_nodes: ["node-1", "node-2"]
 #
 #action.destructive_requires_name: false
 xpack.security.enabled: false
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.keystore.path: certs/es-cluster.p12
+xpack.security.transport.ssl.truststore.path: certs/es-cluster.p12
